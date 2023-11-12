@@ -2801,6 +2801,9 @@ end;
 
 procedure TSkCustomAnimation.InternalStart(const ACanProcess: Boolean);
 begin
+  if FDuration = 0 then
+    Exit;
+
   FNeedStart := False;
   if not FLoop then
     FTickCount := 0;
